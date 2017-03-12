@@ -33,4 +33,17 @@ class SampleAppTests: XCTestCase {
         }
     }
     
+    func testUserList(){
+        RestApiManager.shared.getUsers(onCompletion: { userModelArr in
+            XCTAssert(userModelArr.count >= 0, "OK")
+            
+        })
+    }
+    
+    func testPostList(){
+        RestApiManager.shared.getPostsBy(userId: 1, onCompletion: { postModelArr in
+            XCTAssert(postModelArr.count >= 0, "OK")
+            
+        })
+    }
 }

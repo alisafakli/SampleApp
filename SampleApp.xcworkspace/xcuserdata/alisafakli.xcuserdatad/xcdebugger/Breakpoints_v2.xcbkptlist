@@ -19,5 +19,68 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SampleAppTests/SampleAppTests.swift"
+            timestampString = "511039262.84232"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "testUserList()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SampleAppTests.SampleAppTests.(testUserList () -&gt; ()).(closure #1)"
+                  moduleName = "SampleAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisafakli/Documents/Projects/SampleApp/SampleAppTests/SampleAppTests.swift"
+                  timestampString = "511039404.913363"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SampleAppTests.SampleAppTests.(testUserList () -&gt; ()).(closure #1).(implicit closure #1)"
+                  moduleName = "SampleAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisafakli/Documents/Projects/SampleApp/SampleAppTests/SampleAppTests.swift"
+                  timestampString = "511039404.916535"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SampleAppTests.SampleAppTests.(testUserList () -&gt; ()).(closure #1).(implicit closure #2)"
+                  moduleName = "SampleAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alisafakli/Documents/Projects/SampleApp/SampleAppTests/SampleAppTests.swift"
+                  timestampString = "511039404.919286"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
