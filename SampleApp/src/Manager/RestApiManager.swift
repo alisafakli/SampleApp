@@ -18,7 +18,7 @@ typealias ServiceResponse = (JSON, NSError?) -> Void
 
 class RestApiManager: NSObject {
     static let shared = RestApiManager()
-    let baseURL = "https://jsonplaceholder.typicode.com/"
+    private let baseURL = "https://jsonplaceholder.typicode.com/"
     
     func getUsers(onCompletion: @escaping ([UserModel]) -> Void) {
         Utilities.shared.lockScreen()
@@ -29,11 +29,23 @@ class RestApiManager: NSObject {
                 userModelArray.append(UserModel(json: object))
             }
             onCompletion(userModelArray)
-            
         })
     }
     
-    func makeHTTPGetRequest(path: String, onCompletion: @escaping ServiceResponse) {
+    func getPostsBy(userId: Int, onCompletion: @escaping ([PostModel]) -> Void) {
+        Utilities.shared.lockScreen()
+        makeHTTPGetRequest(path: baseURL + RequestURL.posts.rawValue + "?userId=\(userId)", onCompletion: { json, error in
+            Utilities.shared.unlockScreen()
+            var postModelArray:[PostModel] = []
+            for (_,object) in json {
+                postModelArray.append(PostModel(json: object))
+            }
+            onCompletion(postModelArray)
+        })
+    }
+    
+    
+    private func makeHTTPGetRequest(path: String, onCompletion: @escaping ServiceResponse) {
         if let url = NSURL(string: path) as? URL {
             let request = NSMutableURLRequest(url: url)
             let session = URLSession.shared
@@ -53,4 +65,6 @@ class RestApiManager: NSObject {
             task.resume()
         }
     }
+    
+    
 }

@@ -17,8 +17,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        moveBackground(vw: self.backgroundImageView)
-        
+        Utilities.shared.moveBackground(vw: self.backgroundImageView)
+        getUsers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +28,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getUsers()
+        
     }
     
     func getUsers() {
@@ -41,22 +41,6 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         })
     }
     
-    //Move background image with screen motion
-    func moveBackground(vw: UIView) {
-        let movement = 300
-        
-        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
-        horizontal.minimumRelativeValue = -movement
-        horizontal.maximumRelativeValue = movement
-        
-        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
-        vertical.minimumRelativeValue = -movement
-        vertical.maximumRelativeValue = movement
-        
-        let group = UIMotionEffectGroup()
-        group.motionEffects = [horizontal, vertical]
-        vw.addMotionEffect(group)
-    }
     
     //Tableview data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,7 +56,22 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.performSegue(withIdentifier: "detailSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextScene = segue.destination as? DetailVC {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let selectedUser = userModelArray[indexPath.row]
+                nextScene.userModel = selectedUser
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                self.navigationController?.navigationBar.tintColor = UIColor.white
+                navigationItem.backBarButtonItem = backItem
+            }
+        }
+
+
     }
     
 }

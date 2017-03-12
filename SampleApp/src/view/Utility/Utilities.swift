@@ -43,6 +43,34 @@ class Utilities {
         alertController.addAction(OKAction)
         UIApplication.topViewController()?.present(alertController, animated: true, completion: nil)
     }
+    
+    //Move background image with screen motion
+    func moveBackground(vw: UIView) {
+        let movement = 300
+        
+        let horizontal = UIInterpolatingMotionEffect(keyPath: "center.x", type: .tiltAlongHorizontalAxis)
+        horizontal.minimumRelativeValue = -movement
+        horizontal.maximumRelativeValue = movement
+        
+        let vertical = UIInterpolatingMotionEffect(keyPath: "center.y", type: .tiltAlongVerticalAxis)
+        vertical.minimumRelativeValue = -movement
+        vertical.maximumRelativeValue = movement
+        
+        let group = UIMotionEffectGroup()
+        group.motionEffects = [horizontal, vertical]
+        vw.addMotionEffect(group)
+    }
+}
+
+extension String {
+    func height(constraintedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let label =  UILabel(frame: CGRect(x: 0, y: 0, width: width, height: .greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.text = self
+        label.sizeToFit()
+        return label.frame.height
+    }
+
 }
 
 extension UIApplication {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		181D6CFA1E75476B00FD88FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D6CF91E75476B00FD88FD /* HomeView.swift */; };
-		181D6CFC1E75477A00FD88FD /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D6CFB1E75477A00FD88FD /* DetailView.swift */; };
 		181D6CFE1E75478F00FD88FD /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D6CFD1E75478F00FD88FD /* HomeTableViewCell.swift */; };
 		181D6D011E75554600FD88FD /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D6D001E75554600FD88FD /* Utilities.swift */; };
 		181D6D031E75687C00FD88FD /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181D6D021E75687C00FD88FD /* UserModel.swift */; };
@@ -22,6 +21,8 @@
 		1824FD901E7338BD0001C430 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD8F1E7338BD0001C430 /* HomeVC.swift */; };
 		1824FD941E7339560001C430 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD931E7339560001C430 /* DetailVC.swift */; };
 		1824FD9A1E7345480001C430 /* RestApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824FD991E7345480001C430 /* RestApiManager.swift */; };
+		18CD59D61E75C86200F173F7 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD59D51E75C86200F173F7 /* DetailTableViewCell.swift */; };
+		18CD59D81E75CB0300F173F7 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD59D71E75CB0300F173F7 /* DetailCollectionViewCell.swift */; };
 		F977B5AB27721DEF0C74334E /* Pods_SampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 691979B52B97CA2C280B9A44 /* Pods_SampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +58,6 @@
 
 /* Begin PBXFileReference section */
 		181D6CF91E75476B00FD88FD /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		181D6CFB1E75477A00FD88FD /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		181D6CFD1E75478F00FD88FD /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		181D6D001E75554600FD88FD /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		181D6D021E75687C00FD88FD /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		1824FD8F1E7338BD0001C430 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeVC.swift; path = ../HomeVC.swift; sourceTree = "<group>"; };
 		1824FD931E7339560001C430 /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		1824FD991E7345480001C430 /* RestApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApiManager.swift; sourceTree = "<group>"; };
+		18CD59D51E75C86200F173F7 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		18CD59D71E75CB0300F173F7 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		691979B52B97CA2C280B9A44 /* Pods_SampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F80CD44977AD29F97E8FF2B /* Pods-SampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D8AEAFADACB9CBDD0DEABE83 /* Pods-SampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleApp/Pods-SampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +122,8 @@
 		181D6CF71E75475700FD88FD /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				181D6CFB1E75477A00FD88FD /* DetailView.swift */,
+				18CD59D51E75C86200F173F7 /* DetailTableViewCell.swift */,
+				18CD59D71E75CB0300F173F7 /* DetailCollectionViewCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -438,15 +441,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CD59D81E75CB0300F173F7 /* DetailCollectionViewCell.swift in Sources */,
 				1824FD901E7338BD0001C430 /* HomeVC.swift in Sources */,
 				181D6D051E75688500FD88FD /* PostModel.swift in Sources */,
-				181D6CFC1E75477A00FD88FD /* DetailView.swift in Sources */,
 				181D6CFE1E75478F00FD88FD /* HomeTableViewCell.swift in Sources */,
 				1824FD5F1E73367B0001C430 /* AppDelegate.swift in Sources */,
 				1824FD9A1E7345480001C430 /* RestApiManager.swift in Sources */,
 				181D6CFA1E75476B00FD88FD /* HomeView.swift in Sources */,
 				181D6D011E75554600FD88FD /* Utilities.swift in Sources */,
 				181D6D031E75687C00FD88FD /* UserModel.swift in Sources */,
+				18CD59D61E75C86200F173F7 /* DetailTableViewCell.swift in Sources */,
 				1824FD941E7339560001C430 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
