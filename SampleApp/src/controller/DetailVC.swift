@@ -37,20 +37,7 @@ class DetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewData
         super.viewWillAppear(animated)
         self.title = userModel.name
     }
-    
-    
-//    //Tableview datasource
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return postModelArray.count
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "detail_cell", for: indexPath) as? DetailTableViewCell {
-//            cell.configure(data: postModelArray[indexPath.row])
-//            return cell
-//        }
-//        return UITableViewCell()
-//    }
+
     
     //Collectionview Datasource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

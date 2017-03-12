@@ -20,6 +20,7 @@ class RestApiManager: NSObject {
     static let shared = RestApiManager()
     private let baseURL = "https://jsonplaceholder.typicode.com/"
     
+    //Get all users
     func getUsers(onCompletion: @escaping ([UserModel]) -> Void) {
         Utilities.shared.lockScreen()
         makeHTTPGetRequest(path: baseURL + RequestURL.users.rawValue, onCompletion: { json, error in
@@ -32,6 +33,7 @@ class RestApiManager: NSObject {
         })
     }
     
+    //Get posts by userid
     func getPostsBy(userId: Int, onCompletion: @escaping ([PostModel]) -> Void) {
         Utilities.shared.lockScreen()
         makeHTTPGetRequest(path: baseURL + RequestURL.posts.rawValue + "?userId=\(userId)", onCompletion: { json, error in
@@ -43,7 +45,6 @@ class RestApiManager: NSObject {
             onCompletion(postModelArray)
         })
     }
-    
     
     private func makeHTTPGetRequest(path: String, onCompletion: @escaping ServiceResponse) {
         if let url = NSURL(string: path) as? URL {

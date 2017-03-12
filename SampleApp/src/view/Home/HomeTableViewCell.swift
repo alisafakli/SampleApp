@@ -16,16 +16,6 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var emailLabel: UILabel!
     var cellData: UserModel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-    
     func configure(data: UserModel) {
         self.cellData = data
         self.nameLabel.text = cellData.name
@@ -42,7 +32,7 @@ class HomeTableViewCell: UITableViewCell {
         
         let boldFontAttribute = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 13.0)]
         
-        // Part of string to be bold
+        // Bold part
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Street:"))
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Suite:"))
         attributedString.addAttributes(boldFontAttribute, range: string.range(of: "City:"))

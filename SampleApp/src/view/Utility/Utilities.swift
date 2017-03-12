@@ -12,6 +12,7 @@ import UIKit
 class Utilities {
     static let shared = Utilities()
     
+    //Lock screen with activity indicator
     func lockScreen() {
         DispatchQueue.main.async {
             let actInd: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -25,6 +26,7 @@ class Utilities {
         }
     }
     
+    //Remove lock screen
     func unlockScreen() {
         DispatchQueue.main.async {
             if let window = UIApplication.shared.keyWindow {
@@ -37,6 +39,7 @@ class Utilities {
         }
     }
     
+    //Show alert
     func alert(message: String, title: String = "") {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -63,6 +66,7 @@ class Utilities {
 }
 
 extension String {
+    //Height of text in label
     func height(constraintedWidth width: CGFloat, font: UIFont) -> CGFloat {
         let label =  UILabel(frame: CGRect(x: 0, y: 0, width: width, height: .greatestFiniteMagnitude))
         label.numberOfLines = 0
@@ -74,6 +78,8 @@ extension String {
 }
 
 extension UIApplication {
+    
+    //Return top view controller
     class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let navigationController = controller as? UINavigationController {
             return topViewController(controller: navigationController.visibleViewController)
