@@ -4,5 +4,4 @@ use_frameworks!
 
 target "SampleApp" do
   pod 'SwiftyJSON'
-  pod 'Alamofire'
 end
